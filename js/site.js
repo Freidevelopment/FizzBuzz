@@ -19,12 +19,12 @@ function getValues() {
             text: 'Please enter valid numbers for FizzBuzz to use',
             backdrop: false
         });
-    } else if ((firstNumber == secondNumber) || (firstNumber > 10) || (firstNumber < 1) || (secondNumber > 10) || (secondNumber < 1)) {
+    } else if ((firstNumber == secondNumber) || (firstNumber > stopValue) || (firstNumber < 1) || (secondNumber > stopValue) || (secondNumber < 1)) {
         // display an error message
         Swal.fire({
           icon: 'error',
           title: 'Oops!',
-          text: 'Please enter two seperate numbers within the range of 1-10 for FizzBuzz to use',
+          text: 'Please enter two seperate numbers within the range of 1 and your Stop Value for FizzBuzz to use',
           backdrop: false
       });
     } else if ((stopValue > 5000) || (stopValue < 10)){
@@ -57,6 +57,7 @@ function generateValues(start, end) {
 function displayValues(numberArray) {
     
     let tableHtml = '';
+    let tableDisplay = 0;
 
     let firstNumber = document.getElementById('fizzNumber').value;
     let secondNumber = document.getElementById('buzzNumber').value;
@@ -67,6 +68,8 @@ function displayValues(numberArray) {
     for (let index = 0; index < numberArray.length; index += 1) {
         let number = numberArray[index];
         let className = 'tableNumber';
+        
+        
 
     
     if ((number == 0 )) {
@@ -81,11 +84,17 @@ function displayValues(numberArray) {
       className = 'tableFizz';
       // Display Buzz where the second number is divisible
     }  else if ((number % secondNumber == 0)) {
-      number = 'Buzz'
+      number = 'Buzz';
       className = 'tableBuzz';
     }
 
-      tableHtml += `<tr><td class="${className}">${number}</td></tr>`
+    if((tableDisplay == 0) || (tableDisplay % 6 == 0)) {
+      tableHtml += '<tr>';
+     }
+     tableDisplay = tableDisplay + 1;
+    
+      tableHtml += `<td class="${className}">${number}</td>`;
+      
 
       let tbody = document.getElementById('results');
       tbody.innerHTML = tableHtml;
