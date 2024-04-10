@@ -1,0 +1,108 @@
+:root {
+    --njf-dark-color: #212121;
+    --njf-light-color: #ebebeb;
+
+
+}
+
+/*#region Sticky Footer */
+html,
+body {
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex-grow: 1;
+}
+
+footer {
+    flex-shrink: 0;
+}
+/*#endregion Sticky Footer */
+
+/* #region navbar, footer */
+nav,
+footer {
+    background-color: var(--njf-theme-900);
+    color: var(--njf-theme-100) !important;
+}
+
+.nav-link {
+    color: var(--njf-theme-100);
+}
+
+.nav-link:hover {
+    color: var(--njf-theme-300);
+}
+
+.nav-link.active {
+    color: var(--njf-theme-100) !important;
+    font-weight: 500;
+}
+
+.nav-link.active:hover {
+    color: var(--njf-theme-300) !important;
+}
+
+.navbar-brand {
+    color: var(--njf-theme-100);
+}
+
+.navbar-brand:hover {
+    color: var(--njf-theme-300);
+}
+
+footer .bi {
+    color: var(--njf-theme-200);
+    font-size: 1.5rem;
+    padding-left: .5rem;
+    transition: color 0.25;
+}
+
+footer .bi:hover {
+    color: var(--njf-theme-core);
+}
+
+/* #endregion navbar, footer */
+
+/* #region custom button color */
+.btn-outline-primary {
+    --bs-btn-color: var(--njf-theme-600);
+    --bs-btn-border-color: var(--njf-theme-600);
+    --bs-btn-hover-bg: var(--njf-theme-700);
+    --bs-btn-hover-border-color: var(--njf-theme-700);
+    --bs-btn-active-bg: var(--njf-theme-800);
+    --bs-btn-active-border-color: var(--njf-theme-800);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--njf-theme-600);
+    --bs-btn-border-color: var(--njf-theme-600);
+    --bs-btn-hover-bg: var(--njf-theme-700);
+    --bs-btn-hover-border-color: var(--njf-theme-700);
+    --bs-btn-active-bg: var(--njf-theme-800);
+    --bs-btn-active-border-color: var(--njf-theme-800);
+}
+/* #endregion custom button color */
+
+.app-logo {
+    max-width: 450px;
+}
+
+.checklist {
+    list-style-type: none;
+}
+
+.checklist .bi {
+    color: var(--njf-theme-core);
+}
+
+.devicons {
+    font-size: 3.5rem;
+}
+
