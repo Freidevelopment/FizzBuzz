@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>APP Name: A coding Challenge</title>
+    <title>FizzBuzz: A coding Challenge</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +16,7 @@
 
     <!-- Dev Icons -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-          
+
     <!-- favicon -->
     <link rel="shortcut icon" href="/img/personal_favicon.ico" type="image/x-icon" />
     <!-- Custom CSS themes -->
@@ -29,52 +29,135 @@
 
 <body data-njf-theme="cyan">
     <header>
-           <nav class="navbar navbar-expand-lg navbar-dark">
-               <div class="container-xxl">
-                   <a class="navbar-brand" href="#"> <img src="/img/customLogos/logo_only_dark_background.svg" height="30"> App Name</a>
-                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                       data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
-                       aria-label="Toggle navigation">
-                       <span class="navbar-toggler-icon"></span>
-                   </button>
-                   <div class="collapse navbar-collapse" id="navbarContent">
-                       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                           <li class="nav-item">
-                               <a class="nav-link" href="/index.html">Home</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link active" aria-current="page" href="/app.html">The App</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link" href="/code.html">The Code</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link" href="#">The Repo</a>
-                           </li>
-                       </ul>
-                   </div>
-               </div>
-           </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-xxl">
+                <a class="navbar-brand" href="#"> <img src="/img/customLogos/logo_only_dark_background.svg" height="30">
+                    FizzBuzz</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/app.html">The App</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/code.html">The Code</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">The Repo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main class="container-xxl py-3 mt-5">
-       <h1>APP UI goes here</h1>
-       <label>Secret Message</label>
-       <input id="message" type="text" value="HI!" placeholder="Enter a Message"/>
-       <button id="btnSubmit" class="btn btn-primary" >Display Message</button>
+        <div class="row row-cols-1">
+            <div class="col">
+                <h1 class="fw-bold">FizzBuzz: A Coding Challenge</h1>
+                <p class="lead">
+                    FizzBuzz is a Javascript Coding Exercise
+                    that uses loops, and if else statements.
+                    The objective of the program is to display numbers 100
+                    and below and making numbers divisible by the first 
+                    number to display as "Fizz". Numbers divisible by the 
+                    second number will be displayed as "Buzz". Those numbers
+                    that are divisible by both numbers will display as "FizzBuzz".
+                </p>
+                <h2 class="mt-5 border-bottom border-2">Instructions</h2>
+                <p>
+                    Enter the first and second number from between 1-10
+                     and than choose the third number
+                    between 0-100 for the list of numbers. Press the button 
+                    and watch as teh numbers and Fizz Buzz appear on the page!
+                </p>
+            </div>
+            <div class="col">
+                <!-- App UI -->
+                <form action="#">
+                    <h3 class="border-bottom border-2">Enter Values</h3>
+                    <div class="row g-3">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-3">
+                                <label for="fizzNumber" class="form-label">
+                                    Fizz Number
+                                </label>
+                                <input id ="fizzNumber" 
+                                    class ="form-control" 
+                                    placeholder = "Fizz Number"
+                                    type="number" 
+                                    required aria-label= "Fizz Number" 
+                                    name = "fizzNumber"
+                                    value = "0"
+                                    max = "10"
+                                    min = "0" />
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <label for="buzzNumber" class="form-label">
+                                    Buzz Number
+                                </label>
+                                <input id = "buzzNumber" 
+                                    class = "form-control" 
+                                    placeholder = "Buzz Number" 
+                                    type = "number"
+                                    required aria-label = "Buzz Number" 
+                                    name = "buzzNumber"
+                                    value = "0"
+                                    max = "10"
+                                    min = "0" />
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <label for="stopValue" class="form-label">
+                                    Stop value (min: 10, max: 100)
+                                </label>
+                                <input id = "stopValue" 
+                                    class = "form-control" 
+                                    placeholder = "Stop Value" 
+                                    type = "number"
+                                    required aria-label = "Stop Value" 
+                                    name = "stopValue"
+                                    value = "100"
+                                    max = "100"
+                                    min = "10" />
+                            </div>
+                            <div class="col-12 col-md-3 text-end">
+                                <button type="button" class="btn btn-primary" id="btnSubmit">
+                                    Go
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <h2 class="mt-5 border-bottom border-2 text-uppercase">fizzbuzz!</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody id="results">
+                            <!-- Results go here -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="container-fluid py-3">
         <div class="container-xxl">
             <div class="row align-items-center row-cols-1 row-cols-lg-3 gy-2">
-                <div class="col order-last order-lg-first text-center text-lg-start">
+                <div class="col order-last order-lg-first text-center text-lg-fizz">
                     &copy; 2024 Nathaniel Frei
                 </div>
                 <div class="col text-center">
-                    <img src="/img/customLogos/full Logo (small) dark background.svg" height="40"/>
+                    <img src="/img/customLogos/full Logo (small) dark background.svg" height="40" />
                 </div>
                 <div class="col text-center text-lg-end">
-                    <a href="https://www.linkedin.com/feed/" class="text-decoration-none" target="_blank" >
+                    <a href="https://www.linkedin.com/feed/" class="text-decoration-none" target="_blank">
                         <i class="bi bi-linkedin"></i>
                     </a>
                     <a href="https://github.com/Freidevelopment" class="text-decoration-none" target="_blank">
@@ -93,20 +176,19 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous">
-    </script>
-    
-        <!-- Sweet Alerts JS -->
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+
+    <!-- Sweet Alerts JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-    
+
+
     <!-- Custom JS -->
     <script src="/js/site.js"></script>
 
     <script>
         let button = document.getElementById('btnSubmit');
-        button.addEventListener('click', displayMessage);
+        button.addEventListener('click', getValues);
     </script>
 
 </body>
