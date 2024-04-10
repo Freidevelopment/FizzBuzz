@@ -1,6 +1,20 @@
 :root {
+    /* colors */
     --njf-dark-color: #212121;
-    --njf-light-color: #ebebeb;
+    --njf-light-color: #deeefb;
+    --njf-background-color: rgba(250, 250, 250, 0.8);
+
+    /* fonts */
+    --njf-title-font: "Bebas Neue", sans-serif;
+    --njf-subtitle-font: "Fira Sans", sans-serif;
+    --njf-heading-font: "Bebas Neue", sans-serif;
+    --njf-body-font: "Roboto", sans-serif;
+
+    /* base text styles */
+    --njf-title-color: var(--njf-dark-color);
+    --njf-font-size: 1.2rem;
+    --njf-font-weight: 400;
+    --njf-line-height: 1.5rem;
 
 
 }
@@ -14,6 +28,25 @@ body {
 body{
     display: flex;
     flex-direction: column;
+    font-family: var(--njf-body-font);
+    font-size: var(--njf-font-size);
+    font-weight: var(--njf-font-weight);
+    line-height: var(--njf-line-height);
+    color: var(--njf-dark-color);
+    background-color: var(--njf-background-color);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    font-family: var(--njf-heading-font);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--njf-title-color);
+    letter-spacing: .1rem;
 }
 
 main{
@@ -104,5 +137,22 @@ footer .bi:hover {
 
 .devicons {
     font-size: 3.5rem;
+}
+
+
+.tableNumber {
+    background-color: var(--njf-theme-100) !important;
+}
+
+.tableFizz {
+    background-color: var(--njf-theme-200) !important;
+}
+
+.tableBuzz {
+    background-color: var(--njf-theme-400) !important;
+}
+
+.tableFizzBuzz {
+    background-color: var(--njf-theme-600) !important;
 }
 

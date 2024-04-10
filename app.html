@@ -17,6 +17,13 @@
     <!-- Dev Icons -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
     <!-- favicon -->
     <link rel="shortcut icon" href="/img/personal_favicon.ico" type="image/x-icon" />
     <!-- Custom CSS themes -->
@@ -64,18 +71,18 @@
                 <p class="lead">
                     FizzBuzz is a Javascript Coding Exercise
                     that uses loops, and if else statements.
-                    The objective of the program is to display numbers 100
-                    and below and making numbers divisible by the first 
+                    The objective of the program is to display numbers 0-5000
+                     and making numbers divisible by the first 
                     number to display as "Fizz". Numbers divisible by the 
                     second number will be displayed as "Buzz". Those numbers
                     that are divisible by both numbers will display as "FizzBuzz".
                 </p>
                 <h2 class="mt-5 border-bottom border-2">Instructions</h2>
                 <p>
-                    Enter the first and second number from between 1-10
-                     and than choose the third number
-                    between 0-100 for the list of numbers. Press the button 
-                    and watch as teh numbers and Fizz Buzz appear on the page!
+                    Enter two seperate numbers between 1-10.
+                    Enter a value between 10-5000 for the stop value.
+                    Finally Press the Go button and watch as you find 
+                    all of the numbers divisible by your first two numbers.
                 </p>
             </div>
             <div class="col">
@@ -94,9 +101,9 @@
                                     type="number" 
                                     required aria-label= "Fizz Number" 
                                     name = "fizzNumber"
-                                    value = "0"
-                                    max = "10"
-                                    min = "0" />
+                                    value = "1"
+                                    max = "5000"
+                                    min = "1" />
                             </div>
                             <div class="col-12 col-md-3">
                                 <label for="buzzNumber" class="form-label">
@@ -108,13 +115,13 @@
                                     type = "number"
                                     required aria-label = "Buzz Number" 
                                     name = "buzzNumber"
-                                    value = "0"
-                                    max = "10"
-                                    min = "0" />
+                                    value = "1"
+                                    max = "5000"
+                                    min = "1" />
                             </div>
                             <div class="col-12 col-md-3">
                                 <label for="stopValue" class="form-label">
-                                    Stop value (min: 10, max: 100)
+                                    Stop value
                                 </label>
                                 <input id = "stopValue" 
                                     class = "form-control" 
@@ -123,10 +130,10 @@
                                     required aria-label = "Stop Value" 
                                     name = "stopValue"
                                     value = "100"
-                                    max = "100"
+                                    max = "5000"
                                     min = "10" />
                             </div>
-                            <div class="col-12 col-md-3 text-end">
+                            <div class="col-12 col-md-3 text-center">
                                 <button type="button" class="btn btn-primary" id="btnSubmit">
                                     Go
                                 </button>

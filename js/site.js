@@ -27,7 +27,7 @@ function getValues() {
           text: 'Please enter two seperate numbers within the range of 1-10 for FizzBuzz to use',
           backdrop: false
       });
-    } else if ((stopValue > 100) || (stopValue < 10)){
+    } else if ((stopValue > 5000) || (stopValue < 10)){
         // display an error message
         Swal.fire({
           icon: 'error',
@@ -66,7 +66,7 @@ function displayValues(numberArray) {
 
     for (let index = 0; index < numberArray.length; index += 1) {
         let number = numberArray[index];
-        let className = '';
+        let className = 'tableNumber';
 
     
     if ((number == 0 )) {
