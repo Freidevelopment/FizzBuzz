@@ -73,29 +73,156 @@
             <div class="col-12 col-lg-8">
                 <pre class="line-numbers">
                 <code class="language-js">
-                    function displayMessage() {
-                        let inputBox = document.getElementById('message');
-                        let message = inputBox.value;
-                    
-                        Swal.fire(
-                            {
-                                title: "FizzBuzz",
-                                text: message,
-                                icon: "success",
+                    // Collect user inputs
+                    // AKA Entry points
+                    function getValues() {
+                    // get the input element for each number and grab its value
+                    let firstNumber = document.getElementById('fizzNumber').value;
+                    let secondNumber = document.getElementById('buzzNumber').value;
+                    let stopValue = document.getElementById('stopValue').value;
+
+                    firstNumber = Number(firstNumber);
+                    secondNumber = Number(secondNumber);
+                    stopValue = Number(stopValue);
+
+                    // Validate the inputs
+                        if (isNaN(firstNumber) || isNaN(secondNumber) || isNaN(stopValue)) {
+                            // display an error message
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops!',
+                                text: 'Please enter valid numbers for FizzBuzz to use',
                                 backdrop: false
-                            });                    
+                            });
+                        } else if ((firstNumber == secondNumber) || (firstNumber > stopValue) ||
+                         (firstNumber < 1) || (secondNumber > stopValue) || (secondNumber < 1)) {
+                            // display an error message
+                            Swal.fire({
+                            icon: 'error',
+                            title: 'Oops!',
+                            text: 'Please enter two seperate numbers within the range of
+                             1 and your Stop Value for FizzBuzz to use',
+                            backdrop: false
+                        });
+                        } else if ((stopValue > 5000) || (stopValue < 10)){
+                            // display an error message
+                            Swal.fire({
+                            icon: 'error',
+                            title: 'Oops!',
+                            text: 'Please enter a valid number between 10-100 for the stop value',
+                            backdrop: false
+                        });
+                        } else {
+                            let generatedNumbers = generateValues(0, stopValue);
+                            displayValues(generatedNumbers);
+                        }
+
+                    }
+
+                    // Generate a list of values between 1 and 100
+                    // at the users choice of endpoint
+                    function generateValues(start, end) {
+                        let numbers = [];
+
+                        for (let i = start; i <= end; i++) {
+                        numbers.push(i);
+                        }
+
+                        return numbers;
+                    }
+
+                    // display the proper results in my table
+                    function displayValues(numberArray) {
+                        
+                        let tableHtml = '';
+                        let tableDisplay = 0;
+
+                        let firstNumber = document.getElementById('fizzNumber').value;
+                        let secondNumber = document.getElementById('buzzNumber').value;
+
+                        firstNumber = Number(firstNumber);
+                        secondNumber = Number(secondNumber);
+
+                        for (let index = 0; index < numberArray.length; index += 1) {
+                            let number = numberArray[index];
+                            let className = 'tableNumber';
+                            
+                            
+
+                        
+                        if ((number == 0 )) {
+                            number = numberArray[index];
+                        // Display FizzBuzz where the first and second number is divisible
+                        } else if ((number % firstNumber == 0) && (number % secondNumber == 0)) {
+                        number = 'FizzBuzz';
+                        className = 'tableFizzBuzz';  
+                        // Display Fizz where the first number is divisible
+                        }  else if ((number % firstNumber == 0)){
+                        number = 'Fizz';
+                        className = 'tableFizz';
+                        // Display Buzz where the second number is divisible
+                        }  else if ((number % secondNumber == 0)) {
+                        number = 'Buzz';
+                        className = 'tableBuzz';
+                        }
+
+                        if((tableDisplay == 0) || (tableDisplay % 6 == 0)) {
+                        tableHtml += '<tr>';
+                        }
+                        tableDisplay = tableDisplay + 1;
+                        
+                        tableHtml += `<td class="${className}">${number}</td>`;
+                        
+
+                        let tbody = document.getElementById('results');
+                        tbody.innerHTML = tableHtml;
+                        }
+
                     }
                 </code>
             </pre>
             </div>
             <!-- The code's explanation -->
             <div class="col-12 col-lg-4">
-                <p>The code is structured in one function.</p>
-                <h5><code>displayMessage()</code></h5>
+                <p>The code is structured in three functions.</p>
+                <h5><code>getValues()</code></h5>
                 <p>
-                    The <code>displayMessage</code> function gets the
-                    text from the input element and displays it in
-                    a Sweet Alert popup.
+                    The <code>getValues</code> function gets the
+                    numbers from the input elements for the first Number, the second
+                    number and the stop value. It than checks each input to
+                    make sure that it is both a number and within the 
+                    acceptible range which was specified in the App.
+                    If any of the inputs are not correct than an 
+                    error message pops up for the user and requesting appropriate inputs.
+                    It than goes to the the function <code>generateValues</code> to make the 
+                    full list of the numbers. After this is done it uses 
+                    the numbers from <code>generateValues</code> to the <code>displayValues</code> function.
+                </p>
+                <h5><code>generateValues()</code></h5>
+                <p>
+                    The <code>generateValues</code> function makes 
+                    the numbers between Zero to whatever the 
+                    stop value is labeled as up to 5000. This will
+                    than build those numbers into an array which is sent back to
+                    <code>getValues</code>
+                </p>
+                <h5><code>displayValues()</code></h5>
+                <p>
+                    The <code>displayValues</code> function gets the
+                    number array from <code>getValues</code>. This 
+                    than looks through each of the values and correctly
+                    labeling them in the table, which is created 
+                    as the number array is looked through. 
+                    Throughout the for loop the array is 
+                    checked whether each number is divisible 
+                    by the first input, the second input, or both.
+                    If it is both, the display is changed to 
+                    'FizzBuzz'. If it is only divisible by the 
+                    first number it appears as 'Fizz'. If it is 
+                    only divisible by the second number it 
+                    appears as 'Buzz'. It is than displayed as 
+                    a table that takes up five spaces on the row
+                    before making a new row.
                 </p>
             </div>
         </div>
