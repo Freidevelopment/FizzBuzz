@@ -2,16 +2,16 @@
 // AKA Entry points
 function getValues() {
   // get the <input /> element for each number and grab its value
-  let firstNumber = document.getElementById('fizzNumber').value;
-  let secondNumber = document.getElementById('buzzNumber').value;
+  let fizzNumber = document.getElementById('fizzNumber').value;
+  let buzzNumber = document.getElementById('buzzNumber').value;
   let stopValue = document.getElementById('stopValue').value;
 
-  firstNumber = Number(firstNumber);
-  secondNumber = Number(secondNumber);
+  fizzNumber = Number(fizzNumber);
+  buzzNumber = Number(buzzNumber);
   stopValue = Number(stopValue);
 
   // Validate the inputs
-    if (isNaN(firstNumber) || isNaN(secondNumber) || isNaN(stopValue)) {
+    if (isNaN(fizzNumber) || isNaN(buzzNumber) || isNaN(stopValue)) {
           // display an error message
           Swal.fire({
             icon: 'error',
@@ -19,7 +19,7 @@ function getValues() {
             text: 'Please enter valid numbers for FizzBuzz to use',
             backdrop: false
         });
-    } else if ((firstNumber == secondNumber) || (firstNumber > stopValue) || (firstNumber < 1) || (secondNumber > stopValue) || (secondNumber < 1)) {
+    } else if ((fizzNumber == buzzNumber) || (fizzNumber > stopValue) || (fizzNumber < 1) || (buzzNumber > stopValue) || (buzzNumber < 1)) {
         // display an error message
         Swal.fire({
           icon: 'error',
@@ -36,7 +36,7 @@ function getValues() {
           backdrop: false
       });
     } else {
-        let generatedNumbers = generateValues(0, stopValue);
+        let generatedNumbers = generateValues(1, stopValue);
         displayValues(generatedNumbers);
     }
 
@@ -59,11 +59,11 @@ function displayValues(numberArray) {
     let tableHtml = '';
     let tableDisplay = 0;
 
-    let firstNumber = document.getElementById('fizzNumber').value;
-    let secondNumber = document.getElementById('buzzNumber').value;
+    let fizzNumber = document.getElementById('fizzNumber').value;
+    let buzzNumber = document.getElementById('buzzNumber').value;
 
-    firstNumber = Number(firstNumber);
-    secondNumber = Number(secondNumber);
+    fizzNumber = Number(fizzNumber);
+    buzzNumber = Number(buzzNumber);
 
     for (let index = 0; index < numberArray.length; index += 1) {
         let number = numberArray[index];
