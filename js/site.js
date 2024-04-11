@@ -100,12 +100,4 @@ function displayValues(numberArray) {
       tbody.innerHTML = tableHtml;
     }
 
-
-
-
-
-
-
-
-
 }
