@@ -95,7 +95,7 @@
                                 backdrop: false
                             });
                         } else if ((firstNumber == secondNumber) || (firstNumber > stopValue) ||
-                         (firstNumber < 1) || (secondNumber > stopValue) || (secondNumber < 1)) {
+                         (firstNumber &lt 1) || (secondNumber > stopValue) || (secondNumber &lt 1)) {
                             // display an error message
                             Swal.fire({
                             icon: 'error',
@@ -104,7 +104,7 @@
                              1 and your Stop Value for FizzBuzz to use',
                             backdrop: false
                         });
-                        } else if ((stopValue > 5000) || (stopValue < 10)){
+                        } else if ((stopValue > 5000) || (stopValue &lt 10)){
                             // display an error message
                             Swal.fire({
                             icon: 'error',
@@ -124,7 +124,7 @@
                     function generateValues(start, end) {
                         let numbers = [];
 
-                        for (let i = start; i <= end; i++) {
+                        for (let i = start; i &lt= end; i++) {
                         numbers.push(i);
                         }
 
@@ -143,7 +143,7 @@
                         firstNumber = Number(firstNumber);
                         secondNumber = Number(secondNumber);
 
-                        for (let index = 0; index < numberArray.length; index += 1) {
+                        for (let index = 0; index &lt numberArray.length; index += 1) {
                             let number = numberArray[index];
                             let className = 'tableNumber';
                             
