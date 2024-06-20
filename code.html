@@ -167,11 +167,11 @@
                         }
 
                         if((tableDisplay == 0) || (tableDisplay % 6 == 0)) {
-                        tableHtml += '<tr>';
+                        tableHtml += '&lttr>';
                         }
                         tableDisplay = tableDisplay + 1;
                         
-                        tableHtml += `<td class="${className}">${number}</td>`;
+                        tableHtml += `&lttd class="${className}">${number}&lt/td>`;
                         
 
                         let tbody = document.getElementById('results');
